@@ -1,1 +1,213 @@
-ECHO is on.
+@font-face {
+    font-family: "manrope";
+    src: url(./fonts/Manrope-VariableFont_wght.ttf) format("truetype");
+}
+
+:root {
+    /* colors */
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue-hsl: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    /* font */
+    --font-family: "manrope";
+    --font-size-body: 0.813rem;
+    --fw-700: 700;
+    --fw-500: 500;
+}
+
+
+
+/*================ modern css reset ===================*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/*========================== Style =============================*/
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-body);
+    background-color: var(--Light-Grayish-Blue);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    max-width: 800px;
+    transform: translate(50%, 50%);
+    border-radius: 10px;
+
+    .content-card {
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    img {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        max-width: 300px;
+    }
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    svg {
+        position: absolute;
+        right: 55px;
+    }
+}
+
+.user-profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.share-popup {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    max-width: 14rem;
+    padding: 0.7rem 1.7rem 0.7rem 1.7rem;
+    border-radius: 10px;
+    transform: translate(140%, -140%);
+
+    p {
+        color: var(--Grayish-Blue-hsl);
+        margin-right: 1rem;
+    }
+
+    a:nth-child(2),
+    a:nth-child(3) {
+        margin-right: 1rem;
+    }
+}
+
+.share-popup::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 15px solid var(--Very-Dark-Grayish-Blue);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    bottom: -14px;
+}
+
+h1 {
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.content>* {
+    margin-bottom: 1.5rem;
+}
+
+.content p {
+    color: var(--Desaturated-Dark-Blue);
+}
+
+.username-date-container {
+    margin-left: 1.5rem;
+}
+
+.username-date-container p {
+    color: var(--Grayish-Blue-hsl);
+}
