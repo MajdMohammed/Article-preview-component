@@ -121,12 +121,18 @@ body {
     background-color: var(--Light-Grayish-Blue);
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+}
+
 .container {
     display: flex;
     flex-direction: row;
     background-color: white;
     max-width: 800px;
-    transform: translate(50%, 50%);
     border-radius: 10px;
 
     .content-card {
@@ -140,19 +146,26 @@ body {
     }
 }
 
-.user-profile {
+.card-footer {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
 
-    svg {
-        position: absolute;
-        right: 55px;
+    button {
+        position: relative;
+        float: right;
+        right: -200px;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        border: none;
+        background-color: var(--Desaturated-Dark-Blue);
     }
 }
 
-.user-profile img {
+.card-footer img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -160,19 +173,23 @@ body {
 
 .share-popup {
     position: absolute;
+    float: right;
     display: flex;
     justify-content: center;
     text-align: center;
     flex-direction: row;
     background-color: var(--Very-Dark-Grayish-Blue);
-    max-width: 14rem;
+    max-width: 20rem;
     padding: 0.7rem 1.7rem 0.7rem 1.7rem;
     border-radius: 10px;
-    transform: translate(140%, -140%);
+    transform: translate(50%, -180%);
 
-    p {
+    h2 {
         color: var(--Grayish-Blue-hsl);
         margin-right: 1rem;
+        font-weight: var(--fw-500);
+        font-size: calc(0.4rem + 0.5vw);
+        line-height: 150%;
     }
 
     a:nth-child(2),
@@ -189,7 +206,7 @@ body {
     border-top: 15px solid var(--Very-Dark-Grayish-Blue);
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    bottom: -14px;
+    bottom: -13px;
 }
 
 h1 {
@@ -200,14 +217,21 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
-.content p {
+.content p:first-of-type {
     color: var(--Desaturated-Dark-Blue);
+    font-weight: var(--fw-700);
 }
 
-.username-date-container {
+.author-section {
     margin-left: 1.5rem;
-}
 
-.username-date-container p {
-    color: var(--Grayish-Blue-hsl);
+    p:first-child {
+        color: var(--Very-Dark-Grayish-Blue);
+        font-weight: var(--fw-700);
+    }
+
+    p:nth-last-of-type(1) {
+        color: var(--Grayish-Blue-hsl);
+        font-weight: var(--fw-500);
+    }
 }
